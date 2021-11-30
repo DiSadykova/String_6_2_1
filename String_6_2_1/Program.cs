@@ -12,18 +12,28 @@ namespace String_6_2_1
         {
             Console.WriteLine("Введите с клавиатуры предложение");
             string startString = Console.ReadLine();
-            int b;
-            string[] word = startString.Split();
-            int[] a = new int[];
-            for (int i = 0; i < ; i++)
-            {
-                
-                    word.Length
-            }
-            {
-
-            }
             
+            string[] word = startString.Split();
+            int lengthArray = word.Length;
+            int lengthWord;
+            int maxLengthWord=0;
+            for (int i = 0; i < lengthArray; i++)
+            {
+                lengthWord = word[i].Length;
+                if (lengthWord > maxLengthWord)
+                {
+                    maxLengthWord = lengthWord;
+                }
+            }
+            for (int i = 0; i < lengthArray; i++)
+            {
+                lengthWord = word[i].Length;
+                if (lengthWord == maxLengthWord)
+                {
+                    Console.WriteLine(word[i]);
+                }
+            }
+            Console.ReadKey();
         }
     }
 }
