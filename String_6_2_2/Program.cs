@@ -13,19 +13,19 @@ namespace String_6_2_2
             Console.WriteLine("Введите с клавиатуры предложение");
             string startString = Console.ReadLine();
             startString = startString.ToLower();
-            string[] word = startString.Split();
-            string endString = "";
-            int lengthArray = word.Length;
-            for (int i = 0; i < lengthArray; i++)
-            {
-                endString += word[i];
-            }
-            char[] letArray = endString.ToCharArray();
-            lengthArray = letArray.Length;
+            char[] letArray = startString.ToCharArray();
+            int lengthArray = letArray.Length;
             byte a = 0;
-            for (int i = 0, j = (lengthArray - 1); i < lengthArray; i++, j--)
+            for (int i = 0, j = (lengthArray - 1); i < lengthArray/2; i++, j--)
             {
-                
+                if (Char.IsWhiteSpace(letArray[i]))
+                {
+                    letArray[i] =letArray[i++];
+                }
+                if (Char.IsWhiteSpace(letArray[j]))
+                {
+                    letArray[j] = letArray[j--];
+                }
                 if (letArray[i] != letArray[j])
                 {
                     Console.WriteLine("Строка не является палиндромом");
@@ -34,11 +34,11 @@ namespace String_6_2_2
                     break;
                 }
             }
-            if (a==0)
+            if (a == 0)
             {
                 Console.WriteLine("Строка является палиндромом");
                 Console.ReadKey();
-            } 
+            }
         }
     }
 }

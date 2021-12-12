@@ -17,22 +17,21 @@ namespace String_6_2_1
             int lengthArray = word.Length;
             int lengthWord;
             int maxLengthWord=0;
+            int g = 0;
             for (int i = 0; i < lengthArray; i++)
             {
                 lengthWord = word[i].Length;
                 if (lengthWord > maxLengthWord)
                 {
                     maxLengthWord = lengthWord;
+
                 }
-            }
-            for (int i = 0; i < lengthArray; i++)
-            {
-                lengthWord = word[i].Length;
                 if (lengthWord == maxLengthWord)
                 {
-                    Console.WriteLine(word[i]);
+                    g = i; 
                 }
             }
+            Console.WriteLine(word[g]);
             Console.ReadKey();
         }
     }
